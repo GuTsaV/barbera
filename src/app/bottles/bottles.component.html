@@ -1,0 +1,40 @@
+
+<div class="container">
+
+  <h1 class="page-header">Your bottles <small>Browse, search and drink</small></h1>
+
+  <input type="text" class="form-control bottle-search" [(ngModel)]="term" placeholder="Search..." />
+
+  <table class="table table-striped table-condensed table-hover">
+   <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Year</th>
+      <th>Grape</th>
+      <th>Country</th>
+      <th>District</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bottle of bottles | searchFilter:term">
+      <td>{{bottle.name}}</td>
+      <td>{{bottle.quantity || '-'}} bottles</td>
+      <td>{{bottle.price || '-'}}</td>
+      <td>{{bottle.year || '-'}}</td>
+      <td>{{bottle.grape || '-'}}</td>
+      <td>{{bottle.country || '-'}}</td>
+      <td>{{bottle.district || '-'}}</td>
+      <td><a [routerLink]="['/bottle/' + bottle.$key]" class="btn btn-default btn-xs">View details</a>
+        <a (click)="drinkOne(bottle.$key, bottle.quantity)" class="btn btn-default btn-xs" *ngIf="bottle.quantity > 0">Drink one</a>
+        <a *ngIf="bottle.quantity <= 0" class="btn btn-default btn-xs">None left</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="btn btn-success" [routerLink]="['/add-bottle']">Add new</a>
+  <a class="btn btn-primary" [routerLink]="['/bottles']">Go to top</a>
+
+</div>

@@ -1,0 +1,52 @@
+/* Navbar */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+
+/* Header */
+#header{
+  background: #630017;
+  color: #ffffff;
+  padding-bottom: 10px;
+}
+#header small {
+  color: #cccccc;
+}
+
+input.bottle-search {
+  max-width: 350px;
+  margin: 20px 0;
+}
+
+
+
+/* Typography */
+span.rating {
+  font-size: 3rem;
+}
+span.rating-of {
+  font-size: 2rem;
+}
+
+span.timestamps {
+  font-size: 1.3rem;
+  color: #777777;
+}
+
+.bottle-details label {
+  color: grey;
+}
+
+.bottle-details h3 {
+  margin: 0 0 2.5rem 0;
+}
+
+/* Other */
+.bottle-top {
+  margin: 2rem 0 0 0;
+}
+
+
+/* Colors */

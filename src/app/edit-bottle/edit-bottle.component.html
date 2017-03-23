@@ -1,0 +1,82 @@
+
+<div class="container">
+
+  <h2>Edit {{name}}</h2>
+
+  <form (submit)="onEditSubmit()">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" placeholder="Name (required)" [(ngModel)]="name" required />
+    </div>
+
+    <div class="form-group">
+      <label>Number of bottles</label>
+      <input type="number" step="1" min="0" name="quantity" class="form-control" placeholder="Number of bottles" [(ngModel)]="quantity" />
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="number" min="0" name="price" class="form-control" placeholder="Price" [(ngModel)]="price" />
+    </div>
+
+    <div class="form-group">
+      <label>Year</label>
+      <input type="number" max="2100" min="1900" step="1" name="year" class="form-control" placeholder="{{currentYear}}" [(ngModel)]="year" />
+    </div>
+
+    <div class="form-group">
+      <label>Grape</label>
+      <input type="text" name="grape" class="form-control" placeholder="Grape(s)" [(ngModel)]="grape" />
+    </div>
+
+    <div class="form-group">
+      <label>Country</label>
+      <input type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="country" />
+    </div>
+
+    <div class="form-group">
+      <label>District</label>
+      <input type="text" name="district" class="form-control" placeholder="District" [(ngModel)]="district" />
+    </div>
+
+    <div class="form-group">
+      <label>Combine with</label>
+      <input type="text" name="food" class="form-control" placeholder="Combine with" [(ngModel)]="food" />
+    </div>
+
+    <div class="form-group">
+      <label>Taste</label>
+      <input type="text" name="taste" class="form-control" placeholder="Taste" [(ngModel)]="taste" />
+    </div>
+
+    <div class="form-group">
+      <label>Scent</label>
+      <input type="text" name="scent" class="form-control" placeholder="Scent" [(ngModel)]="scent" />
+    </div>
+
+    <div class="form-group">
+      <label>Ageing</label>
+      <input type="text" name="ageing" class="form-control" placeholder="Ageing potential" [(ngModel)]="ageing" />
+    </div>
+
+    <div class="form-group">
+      <label>Rating</label>
+      <select name="rating" class="form-control" [(ngModel)]="rating">
+        <option selected="selected">-</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Comment</label>
+      <textarea type="text" name="comment" class="form-control" placeholder="Comment" [(ngModel)]="comment"></textarea>
+    </div>
+
+    <input type="submit" class="btn btn-success btn" value="Save" />
+  </form>
+</div>

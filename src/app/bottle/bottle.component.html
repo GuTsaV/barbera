@@ -1,0 +1,60 @@
+<div class="container" *ngIf="bottle">
+
+  <div class="bottle-top">
+    <div class="pull-left">
+      <a class="btn btn-success btn-sm" [routerLink]="['/edit-bottle/' + bottle.$key]">Edit</a>
+      <a class="btn btn-primary btn-sm" (click)="drinkOne(bottle.$key, bottle.quantity)">Drink one</a>
+      <a class="btn btn-danger btn-sm" (click)="onDeleteClick()">Delete</a>
+    </div>
+
+    <div class="pull-right">
+      <span class="timestamps">Created at: {{ (bottle.created_at | date:'mediumDate') || '-' }} <br /></span>
+      <span class="timestamps" *ngIf="bottle.modified_at">Modified at: {{ (bottle.modified_at | date:'mediumDate') }}</span>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <h1 class="page-header">{{bottle.name}} <small>Details</small></h1>
+
+  <div class="row bottle-details">
+    <div class="col-md-6 col-xs-6">
+      <label>Origin</label>
+      <h3>{{ bottle.district}}<span *ngIf="bottle.district">, </span>{{ bottle.country || '-' }}</h3>
+
+      <label>From year</label>
+      <h3>{{ bottle.year || '-' }}</h3>
+
+      <label>Grape</label>
+      <h3>{{ bottle.grape || '-' }}</h3>
+
+      <label>Can age for </label>
+      <h3>{{ bottle.ageing ? bottle.ageing + ' years' : '-' }}</h3>
+
+      <label>Price</label>
+      <h3>{{ bottle.price || '-' }}</h3>
+
+      <label>Quantity</label>
+      <h3>{{ bottle.quantity || '0' }} bottles</h3>
+
+      <label>Rating</label>
+      <h3><span class="rating">{{ bottle.rating || '-' }}</span><span class="rating-of"> / 5</span></h3>
+
+    </div>
+    <div class="col-md-6  col-xs-6">
+      <label>Combine with</label>
+      <h3>{{ bottle.food || '-' }}</h3>
+
+      <label>Taste</label>
+      <h3>{{ bottle.taste || '-' }}</h3>
+
+      <label>Scent</label>
+      <h3>{{ bottle.scent || '-' }}</h3>
+
+      <div class="well" *ngIf="bottle.comment">
+        <p class="lead">{{ bottle.comment }}</p>
+      </div>
+
+    </div>
+  </div>
+</div>

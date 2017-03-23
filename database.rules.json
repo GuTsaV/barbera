@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "bottles": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid",
+        "name": {
+          ".validate": "newData.isString()"
+        },
+        "price": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "year": {
+          ".validate": "newData.isNumber() && newData.val() >= 1900 && newData.val() <= 2100"
+        },
+        "ageing": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "rating": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5"
+        }
+      }
+    }
+  }
+}

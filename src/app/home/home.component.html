@@ -1,0 +1,11 @@
+<section id="main">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Welcome to Barbera</h1>
+      <h2>Barbera is a modern web tool to keep track of your wine cellar. </h2>
+      <a *ngIf="(af.auth | async)" class="btn btn-success btn-lg" [routerLink]="['/bottles']">Go to your bottles</a>
+      <p *ngIf="!(af.auth | async)">Log in below to start indexing your wine cellar</p>
+      <a *ngIf="!(af.auth | async)" class="btn btn-primary btn-lg" (click)="login()">Login</a>
+    </div>
+  </div>
+</section>
